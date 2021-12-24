@@ -1,7 +1,8 @@
+import { useCallback } from "react";
 import styles from "./ToDo.module.css";
 
 const ToDo = (props) => {
-  const rightNow = new Date().toLocaleString();
+  const rightNow = useCallback(new Date().toLocaleString(), []);
 
   const taskDoneHandler = () => {
     props.onRemove(props.id);
