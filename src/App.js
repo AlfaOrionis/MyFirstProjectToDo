@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ToDoForm from "./Components/ToDoForm";
 
-function App() {
+import ToDoList from "./Components/ToDoList";
+
+import styles from "./App.module.css";
+import { useState } from "react/cjs/react.development";
+
+const App = () => {
+  const [theTask, setTheTask] = useState();
+
+  const passingTheTask = (props) => {
+    setTheTask(props);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <div className={styles.form}>
+        <ToDoForm onPassingTheTask={passingTheTask} />
+      </div>
+
+      <div className={styles.lists}>
+        <ToDoList passedTask={theTask} />
+      </div>
+      <h1 className="tittlefinally">FINALLY GET SH*T DONE</h1>
+    </React.Fragment>
   );
-}
+};
 
 export default App;

@@ -1,13 +1,25 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: Arial;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background: linear-gradient(45deg, #ebf8e1 0 40%, #ff890c 70% 100%);
+  min-height: 300vh;
+}
+
+.tittlefinally {
+  color: rgb(255, 47, 47);
+  font-family: "Permanent Marker";
+  font-size: 3vw;
+  width: 25vw;
+  position: absolute;
+  z-index: -1;
+  top: 10%;
+  left: 10%;
 }
