@@ -1,0 +1,33 @@
+.form input {
+  display: block;
+  margin: 0.5rem 0 0.5rem 0;
+  line-height: 150%;
+  border: 2px solid orange;
+  border-radius: 5px;
+  outline: none;
+  width: 80%;
+  font-size: 0.9em;
+}
+
+.form input:focus {
+  border: 2px solid rgb(255, 94, 0);
+}
+
+.form label {
+  font-weight: bold;
+}
+
+.form button {
+  background-color: rgb(255, 115, 0);
+  border: 2px solid black;
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 0.5em 1em;
+  margin-top: 0.5em;
+  font-size: 1em;
+}
+
+.form .message {
+  margin: 5px 0;
+  color: red;
+}

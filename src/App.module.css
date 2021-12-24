@@ -1,0 +1,9 @@
+.lists {
+  display: flex;
+  justify-content: space-around;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+}
