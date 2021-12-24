@@ -1,9 +1,29 @@
 .modal {
   width: 25%;
   min-height: 25vh;
+
   background-color: white;
   border-radius: 20px;
   margin: 1rem;
   padding: 1rem;
+
   box-shadow: 0px 0px 3px orange;
+}
+
+.modal i:nth-of-type(1) {
+  transform: rotate(-90deg);
+}
+
+.modal i:nth-of-type(2) {
+  transform: rotate(90deg);
+}
+
+.modal i {
+  cursor: pointer;
+}
+
+.arrowWrap {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 0.5em;
 }

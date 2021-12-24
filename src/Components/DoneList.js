@@ -8,19 +8,23 @@ const DoneList = (props) => {
   const [theDoneTasks, setTheDoneTasks] = useState([]);
 
   useEffect(() => {
-    console.log(props.passingtasks);
-    if (props.passingtasks) {
-      const filteredTasks = props.passingtasks.filter(
-        (task) => task.done === true
-      );
-      setTheDoneTasks(filteredTasks);
+    console.log(props.passingTheDoneTask);
+    if (props.passingTheDoneTask) {
+      setTheDoneTasks((prevState) => [props.passingTheDoneTask, ...prevState]);
     }
-  }, [props.passingtasks]);
+  }, [props.passingTheDoneTask]);
 
   return (
     <Modal>
       {theDoneTasks.map((item) => (
-        <ToDo name={item.name} key={item.id} />
+        <ToDo
+          name={item.name}
+          key={item.id}
+          id={item.id}
+          date={item.date}
+          time={item.time}
+          done={true}
+        />
       ))}
     </Modal>
   );

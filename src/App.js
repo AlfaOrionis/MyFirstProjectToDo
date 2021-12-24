@@ -9,15 +9,14 @@ import DoneList from "./Components/DoneList";
 
 const App = () => {
   const [theTask, setTheTask] = useState();
-  const [passingTasks, setPassingTasks] = useState();
+  const [passingDoneTask, setPassingDoneTask] = useState();
 
   const passingTheTasksToDO = (passedTask) => {
     setTheTask(passedTask);
   };
 
-  const passing = (propss) => {
-    setPassingTasks(propss);
-    console.log(propss);
+  const passing = (doneTask) => {
+    setPassingDoneTask(doneTask);
   };
 
   return (
@@ -28,7 +27,7 @@ const App = () => {
 
       <div className={styles.lists}>
         <ToDoList passedTask={theTask} onProp={passing} />
-        <DoneList passingtasks={passingTasks} />
+        <DoneList passingTheDoneTask={passingDoneTask} />
       </div>
       <h1 className="tittlefinally">FINALLY GET SH*T DONE</h1>
     </React.Fragment>

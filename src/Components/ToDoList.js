@@ -23,7 +23,7 @@ const ToDoList = (props) => {
 
     setTasksToDo(coppiedTasks);
 
-    props.onProp(coppiedTasks);
+    props.onProp(removedOne);
 
     console.log(tasksToDo);
   };

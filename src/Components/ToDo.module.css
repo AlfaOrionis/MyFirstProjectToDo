@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0.4em 0;
+  height: 6em;
 
   border-bottom: 2px solid orange;
 }
@@ -11,8 +12,8 @@
   font-size: 1.2em;
 }
 
-.li div:nth-of-type(1) {
-  width: 70%;
+.nameOfTask {
+  width: 60%;
   display: flex;
   align-items: center;
   background: linear-gradient(45deg, rgb(252, 164, 0) 0 40%, #ffffff 85% 100%);
@@ -21,16 +22,17 @@
   padding: 0.1em 0.4em;
 }
 
-.li h2 {
-  font-size: 1em;
+.li h2,
+.li p {
+  font-size: 0.95em;
   color: rgb(0, 0, 0);
   text-align: center;
 }
 
 .li div ~ div {
   display: flex;
-  align-items: center;
-
+  max-width: 30%;
+  justify-content: center;
   flex-direction: column;
 }
 
@@ -50,4 +52,12 @@
   background-color: black;
   color: rgb(252, 164, 0);
   transform: scale(1.1);
+}
+
+.doneInfo h2 {
+  color: rgb(0, 255, 0);
+}
+
+.li h2 {
+  font-size: 1.1em;
 }
