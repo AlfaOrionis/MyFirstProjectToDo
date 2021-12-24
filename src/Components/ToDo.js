@@ -34,8 +34,6 @@ const ToDo = (props) => {
         {props.done && doneInfo}
         {!props.done && <button onClick={taskDoneHandler}> DONE!</button>}
         {props.done && <button onClick={taskDoneDeleteHandler}> Delete</button>}
-
-        {/* {props.done && <p>Done on 24.12.2012 13:53</p>} */}
       </div>
     </li>
   );
