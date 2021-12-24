@@ -2,7 +2,7 @@ import styles from "./ToDo.module.css";
 
 const ToDo = (props) => {
   const taskDoneHandler = () => {
-    props.onRemove(props.name);
+    props.onRemove(props.id);
   };
 
   return (

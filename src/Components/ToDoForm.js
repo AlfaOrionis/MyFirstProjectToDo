@@ -44,6 +44,8 @@ const ToDoForm = (props) => {
       name: taskValue,
       date: dateValue,
       time: timeValue,
+      id: Math.random().toString(),
+      done: false,
     };
 
     taskRef.current.value = "";

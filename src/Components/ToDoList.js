@@ -5,23 +5,36 @@ import Modal from "../Layout/Modal";
 import { useState } from "react/cjs/react.development";
 
 const ToDoList = (props) => {
-  const [fetchedTasks, setFetchedTasks] = useState([]);
+  const [tasksToDo, setTasksToDo] = useState([]);
   useEffect(() => {
     if (props.passedTask) {
-      setFetchedTasks((prevState) => [props.passedTask, ...prevState]);
+      setTasksToDo((prevState) => [...prevState, props.passedTask]);
+      console.log(props.passedTask);
     }
   }, [props.passedTask]);
 
-  const filtering = (name) => {
-    const filteredTasks = fetchedTasks.filter((task) => task.name !== name);
+  const filtering = (id) => {
+    const index = tasksToDo.findIndex((task) => task.id === id);
+    let coppiedTasks = [...tasksToDo];
+    const removedOne = { ...coppiedTasks[index], done: true };
+    console.log(removedOne);
 
-    setFetchedTasks(filteredTasks);
+    coppiedTasks[index] = removedOne;
+
+    setTasksToDo(coppiedTasks);
+
+    props.onProp(coppiedTasks);
+
+    console.log(tasksToDo);
   };
 
-  const ToDos = fetchedTasks.map((item) => (
+  const Todosfiltered = tasksToDo.filter((task) => task.done === false);
+
+  const ToDos = Todosfiltered.map((item) => (
     <ToDo
       onRemove={filtering}
-      key={Math.random().toString()}
+      id={item.id}
+      key={item.id}
       name={item.name}
       date={item.date}
       time={item.time}
