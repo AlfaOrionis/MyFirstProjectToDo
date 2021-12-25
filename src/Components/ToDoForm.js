@@ -9,6 +9,7 @@ import LoadingSpinner from "../Layout/LoadingSpinner";
 import SuccessMessage from "./SuccessMessage";
 
 const ToDoForm = (props) => {
+  console.log("render");
   const taskRef = useRef();
   const dateRef = useRef();
   const timeRef = useRef();
@@ -48,9 +49,12 @@ const ToDoForm = (props) => {
       done: false,
     };
 
-    taskRef.current.value = "";
-    dateRef.current.value = "";
-    timeRef.current.value = "";
+    //use setTimeout, otherwise it shows validation message when submitting cuz of onBlur, could also use isTouched state
+    setTimeout(() => {
+      taskRef.current.value = "";
+      dateRef.current.value = "";
+      timeRef.current.value = "";
+    }, 400);
 
     props.onPassingTheTask(theTask);
     //just playing with the animations here, might as well remove it
@@ -58,11 +62,6 @@ const ToDoForm = (props) => {
 
     setTimeout(() => {
       setIsLoading(false);
-
-      //i am reseting the validation after adding a task
-      setIsTaskInputValid(true);
-      setIsDateInputValid(true);
-      setIsTimeInputValid(true);
     }, 400);
 
     setIsSuccess(true);
@@ -71,6 +70,7 @@ const ToDoForm = (props) => {
     }, 1600);
   };
 
+  // use seTimeout on onBlur so Date and Time inputs works correctly, otherwise they dont react for the first click cuz of the popping message
   return (
     <Modal>
       <form className={styles.form} onSubmit={submitHandler}>
